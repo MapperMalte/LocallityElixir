@@ -1,0 +1,23 @@
+<h1>Show Chat message</h1>
+
+<ul>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @chat_message.content %>
+  </li>
+
+  <li>
+    <strong>Delivered:</strong>
+    <%= @chat_message.delivered %>
+  </li>
+
+  <li>
+    <strong>Seen:</strong>
+    <%= @chat_message.seen %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.chat_message_path(@conn, :edit, @chat_message) %></span>
+<span><%= link "Back", to: Routes.chat_message_path(@conn, :index) %></span>

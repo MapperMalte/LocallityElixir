@@ -1,0 +1,8 @@
+<h1>Show Chat room  messages</h1>
+
+<ul>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.chat_room__messages_path(@conn, :edit, @chat_room__messages) %></span>
+<span><%= link "Back", to: Routes.chat_room__messages_path(@conn, :index) %></span>

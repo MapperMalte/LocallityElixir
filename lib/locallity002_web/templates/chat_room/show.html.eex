@@ -1,0 +1,13 @@
+<h1>Show Chat room</h1>
+
+<ul>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @chat_room.type %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.chat_room_path(@conn, :edit, @chat_room) %></span>
+<span><%= link "Back", to: Routes.chat_room_path(@conn, :index) %></span>

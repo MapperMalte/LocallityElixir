@@ -1,0 +1,30 @@
+<h1>Listing Messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Delivered</th>
+      <th>Seen</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for chat_message <- @messages do %>
+    <tr>
+      <td><%= chat_message.content %></td>
+      <td><%= chat_message.delivered %></td>
+      <td><%= chat_message.seen %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.chat_message_path(@conn, :show, chat_message) %></span>
+        <span><%= link "Edit", to: Routes.chat_message_path(@conn, :edit, chat_message) %></span>
+        <span><%= link "Delete", to: Routes.chat_message_path(@conn, :delete, chat_message), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Chat message", to: Routes.chat_message_path(@conn, :new) %></span>

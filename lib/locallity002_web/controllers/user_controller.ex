@@ -68,4 +68,8 @@ defmodule Locallity002Web.UserController do
       json(conn, %{user: user, success: false})
     end
   end
+
+  def register(conn, %{"email" => email, "password" => password}) do
+
+  end
 end

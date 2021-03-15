@@ -27,6 +27,7 @@ defmodule Locallity002Web.Router do
     post "/user/show", UserController, :show
     get "/user", UserController, :index
     post "/user/login", UserController, :login
+    post "/user/register", UserController, :register
   end
 
   # Enables LiveDashboard only for development

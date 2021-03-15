@@ -1,0 +1,26 @@
+<h1>Listing Chatrooms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for chat_room <- @chatrooms do %>
+    <tr>
+      <td><%= chat_room.type %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.chat_room_path(@conn, :show, chat_room) %></span>
+        <span><%= link "Edit", to: Routes.chat_room_path(@conn, :edit, chat_room) %></span>
+        <span><%= link "Delete", to: Routes.chat_room_path(@conn, :delete, chat_room), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Chat room", to: Routes.chat_room_path(@conn, :new) %></span>
